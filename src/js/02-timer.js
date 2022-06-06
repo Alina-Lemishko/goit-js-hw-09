@@ -26,7 +26,7 @@ const fp = flatpickr(myInput, options);
 
 // Listeners
 buttonStart.addEventListener('click', onStart);
-buttonStart.setAttribute("disabled", true)
+buttonStart.disabled = true;
 
 Notiflix.Notify.init({
   position: 'center-top',
@@ -38,7 +38,7 @@ Notiflix.Notify.init({
 
 //Functions
 fp.config.onChange.push(function (selectedDates) {
-  buttonStart.setAttribute('disabled', true);
+  buttonStart.disabled = true;
   const currentTime = new Date().getTime();
   if (selectedDates[0] <= currentTime) {
     setTimeout(() => {
@@ -46,7 +46,7 @@ fp.config.onChange.push(function (selectedDates) {
     }, 500);
   }
   if (selectedDates[0] > currentTime) {
-    buttonStart.removeAttribute('disabled', true)
+    buttonStart.disabled = false;
   }
 
   selectedTime = selectedDates[0].getTime();
@@ -71,7 +71,7 @@ function onStart() {
    
   }, 1000);
   if (onStart) {
-    buttonStart.setAttribute('disabled', true);
+    buttonStart.disabled = true;
   }
 }
 

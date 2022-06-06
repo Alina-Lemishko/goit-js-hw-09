@@ -14,8 +14,7 @@ let intervalId;
 //Functions
 function onClickStart() {
   if (onClickStart) {
-    refs.buttonStart.setAttribute("disabled", true);
-    refs.buttonStop.removeAttribute("disabled", true);
+    refs.buttonStart.disabled = true;
    intervalId = setInterval(onChanceColor, 1000);
   }
 }
@@ -26,11 +25,10 @@ function onChanceColor() {
 }
 
 // Function for stop change color
-function onClickStop(){
+function onClickStop() {
   if (onClickStop) {
+    refs.buttonStart.disabled = false;
     clearInterval(intervalId);
-    refs.buttonStart.removeAttribute("disabled", true)
-    refs.buttonStop.setAttribute("disabled", true);
   }
 };
 
