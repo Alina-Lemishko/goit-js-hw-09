@@ -12,9 +12,9 @@ let formValues = {
 };
 
 // Listeners
-form.elements['delay'].addEventListener('input', handleFormUpdate)
-form.elements['step'].addEventListener('input', handleFormUpdate)
-form.elements['amount'].addEventListener('input', handleFormUpdate)
+form.elements.delay.addEventListener('input', handleFormUpdate)
+form.elements.step.addEventListener('input', handleFormUpdate)
+form.elements.amount.addEventListener('input', handleFormUpdate)
 form.addEventListener('submit', handlePromises);
 
 //Functions
